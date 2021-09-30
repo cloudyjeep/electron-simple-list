@@ -1,0 +1,47 @@
+{
+  "name": "electron-simple-list",
+  "version": "0.0.1",
+  "main": "main.js",
+  "author": "cloudyjeep",
+  "description": "electron simple list",
+  "license": "MIT",
+  "build": {
+    "appId": "id.cloudyjeep.simple-list",
+    "asar": false,
+    "win": {
+      "target": "portable"
+    },
+    "linux": {
+      "target": "AppImage"
+    },
+    "electronDownload": {
+      "cache": "./electron",
+      "version": "13.1.7"
+    },
+    "files": ["!electron/*","build/*"]
+  },
+  "scripts": {
+    "dev": "vite",
+    "start": "electron .",
+    "build:app": "vite build",
+    "build:electron": "electron-builder -l --x64",
+    "build": "npm run cleanup && npm run build:app && npm run build:electron",
+    "cleanup": "rimraf ./dist"
+  },
+  "devDependencies": {
+    "@preact/preset-vite": "^2.0.0",
+    "electron": "13.1.7",
+    "electron-builder": "^22.11.7",
+    "formik": "^2.2.9",
+    "grommet": "^2.17.5",
+    "grommet-icons": "^4.6.2",
+    "grommet-theme-hpe": "^2.2.1",
+    "idb-keyval": "^6.0.2",
+    "preact": "^10.5.13",
+    "rimraf": "^3.0.2",
+    "styled-components": "^5.3.1",
+    "vite": "^2.5.4",
+    "yup": "^0.32.9"
+  },
+  "dependencies": {}
+}
