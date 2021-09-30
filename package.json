@@ -7,7 +7,6 @@
   "license": "MIT",
   "build": {
     "appId": "id.cloudyjeep.simple-list",
-    "asar": false,
     "win": {
       "target": "portable"
     },
@@ -18,13 +17,13 @@
       "cache": "./electron",
       "version": "13.1.7"
     },
-    "files": ["!electron/*","build/*"]
+    "files": ["!electron/*"]
   },
   "scripts": {
     "dev": "vite",
     "start": "electron .",
     "build:app": "vite build",
-    "build:electron": "electron-builder -l --x64",
+    "build:electron": "electron-builder -wl --x64",
     "build": "npm run cleanup && npm run build:app && npm run build:electron",
     "cleanup": "rimraf ./dist"
   },

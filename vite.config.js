@@ -6,7 +6,7 @@ export default defineConfig({
   root: "src",
   publicDir: "../public",
   build: {
-    outDir: "../build",
+    outDir: "../resource",
     emptyOutDir: true,
     chunkSizeWarningLimit: 1e5, // max 10mb
     terserOptions: {

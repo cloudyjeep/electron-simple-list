@@ -1,5 +1,5 @@
 const { app, BrowserWindow, screen } = require("electron");
-// const path = require("path");
+const path = require("path");
 
 let mainWindow;
 const isDevelopment = !app.isPackaged;
@@ -26,19 +26,11 @@ function createWindow() {
 
   if (isDevelopment) {
     mainWindow.loadURL(`http:localhost:3000`);
-    // mainWindow.openDevTools();
+    mainWindow.openDevTools();
   } else {
-    mainWindow.loadFile("dist/_resource/index.html")
-    // mainWindow.loadURL(path.join(__dirname, "build/index.html"));
+      mainWindow.loadFile("./resource/index.html")
   }
   
-  
-  mainWindow.openDevTools();
-  // mainWindow.setTitle(isDevelopment ? "AKU"  : "DIA");
-  // mainWindow.loadFile("./dist/_resource/index.html").catch(() => {
-  //   mainWindow.loadFile("http:localhost:3000")
-  // });
-
   mainWindow.on("closed", function () {
     mainWindow = null;
   });
